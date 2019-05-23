@@ -1,0 +1,106 @@
+<html>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+ 
+<script type="text/javascript">
+
+
+$.ajax({
+
+url: 'https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=EUR&to=PKR',
+headers: { 'X-RapidAPI-Key': 'vB5gyrEt4MmshMx4dH6Tlyn4428Dp1haiEJjsnhJQpnhDLEknZ'},
+success : function(data) {
+	$('#EURPKR').html(data)
+},
+error : function(data) {
+	console.log(data);
+}
+
+});
+
+
+$.ajax({
+
+url: 'https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=PKR&to=EUR',
+headers: { 'X-RapidAPI-Key': 'vB5gyrEt4MmshMx4dH6Tlyn4428Dp1haiEJjsnhJQpnhDLEknZ'},
+success : function(data) {
+	$('#PKRTOEUR').html(data)
+},
+error : function(data) {
+	console.log(data);
+}
+
+});
+
+$.ajax({
+
+url: 'https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=USD&to=PKR',
+headers: { 'X-RapidAPI-Key': 'vB5gyrEt4MmshMx4dH6Tlyn4428Dp1haiEJjsnhJQpnhDLEknZ'},
+success : function(data) {
+	$('#USDPKR').html(data)
+},
+error : function(data) {
+	console.log(data);
+}
+
+});
+
+$.ajax({
+
+url: 'https://currency-exchange.p.rapidapi.com/exchange?q=1.0&from=PKR&to=USD',
+headers: { 'X-RapidAPI-Key': 'vB5gyrEt4MmshMx4dH6Tlyn4428Dp1haiEJjsnhJQpnhDLEknZ'},
+success : function(data) {
+	$('#PKRTOUSD').html(data)
+},
+error : function(data) {
+	console.log(data);
+}
+
+});
+
+
+</script>
+<style type="text/css">
+	td {
+		padding-left: 20px;
+		padding-right: 15px;
+		text-align: center;
+	}
+	th {
+		text-align: center;
+	}
+
+	tr {
+		background-color: #efffc9;
+	}
+</style>
+
+	<table border="1">
+		<tr>
+			<th colspan="2">Current Exchange Rates</th>
+		</tr>
+		<tr>
+			<th>Currency</th>
+			<th>Rate</th>
+		</tr>
+		<tr>
+			<td>EUR PKR</td>
+			<td id="EURPKR"></td>
+		</tr>
+		<tr>
+			<td>USD PKR</td>
+			<td id="USDPKR"></td>
+		</tr>
+		<tr>
+			<td>PKR EUR</td>
+			<td id="PKRTOEUR"></td>
+		</tr>
+		<tr>
+			<td>PKR USD</td>
+			<td id="PKRTOUSD"></td>
+		</tr>
+	</table>
+</html>
